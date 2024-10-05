@@ -31,6 +31,9 @@ const Navbar = () => {
       {/* Navbar Links */}
       <ul className={`flex-col  mx-6 my-10 md:flex-row md:flex md:space-x-4 absolute md:relative bg-gray-50 md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-16 left-0 w-full md:w-auto' : 'top-[-200px] md:top-0 md:flex'} md:items-center`}>
         <li>
+          <a href="#hero" className="text-black p-2 cursor-pointer hover:text-xl">Home</a>
+        </li>
+        <li>
           <a href="#about" className="text-black p-2 cursor-pointer hover:text-xl">About</a>
         </li>
         <li>
