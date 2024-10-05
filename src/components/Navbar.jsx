@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Solid icons for burger menu
 import { faFacebook, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Brand icons
+import bishnuLogo from '/Users/bishnurijal/my-app/src/assets/bishnuLogo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State to manage the menu visibility
@@ -13,11 +14,11 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between bg-gray-50 p-4">
       {/* Logo Section */}
-      <a className="flex items-center">
+      <a href='/' className="flex items-center">
         <img 
-          className="w-20 h-20 object-cover rounded-full" 
-          src="src/assets/Bishnu RIjallogo.png" 
-          alt="Bishnu Rijal Logo" 
+          className="w-20 h-20 object-cover rounded-full"
+          src={bishnuLogo}
+          alt="Bishnu Rijal" 
         />
       </a>
 

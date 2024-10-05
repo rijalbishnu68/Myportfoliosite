@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import portpic from "/Users/bishnurijal/my-app/src/assets/portpic.jpeg";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +30,7 @@ const About = () => {
         {/* Card with Image */}
         <div className={`bg-white shadow-md rounded-lg p-6 transform transition-transform duration-1000 ${isVisible ? 'translate-y-0' : '-translate-y-20'}`}>
           <img 
-            src="src/assets/portpic.jpg" 
+            src={portpic}
             alt="Your Image" 
             className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
           />
