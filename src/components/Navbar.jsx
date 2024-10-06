@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import Typed from 'typed.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Solid icons for burger menu
 import { faFacebook, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Brand icons
-import bishnuLogo from '/Users/bishnurijal/my-app/src/assets/bishnuLogo.png'
+import bishnuLogo from '/Users/bishnurijal/my-app/src/assets/bishnuLogo.png';
+
+
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State to manage the menu visibility
@@ -11,62 +16,78 @@ const Navbar = () => {
     setIsOpen(!isOpen); // Toggle the menu open/closed
   };
 
+  const closeMenu = () => {
+    setIsOpen(false); // Close the menu
+  };
+
   return (
-    <nav className="flex items-center justify-between bg-gray-50 p-4">
+    <nav className="flex items-center justify-between bg-gray-400 p-4">
       {/* Logo Section */}
       <a href='/' className="flex items-center">
-        <img 
-          className="w-20 h-20 object-cover rounded-full"
+        <img
+          className="w-20 h-20 rounded-full"
           src={bishnuLogo}
-          alt="Bishnu Rijal" 
+          alt="Bishnu Rijal"
         />
       </a>
 
       {/* Hamburger Menu Icon for Small Screens */}
-      <div className="md:hidden">
+      <div className="md:hidden z-50">
         <button onClick={toggleMenu}>
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="h-6 w-6 text-black" />
         </button>
       </div>
 
       {/* Navbar Links */}
-      <ul className={`flex-col  mx-6 my-10 md:flex-row md:flex md:space-x-4 absolute md:relative bg-gray-50 md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-16 left-0 w-full md:w-auto' : 'top-[-200px] md:top-0 md:flex'} md:items-center`}>
+      <ul
+        className={`fixed inset-0 bg-purple-500 bg-opacity-95 z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:static md:flex-row md:space-x-4 md:bg-transparent md:translate-x-0`}
+      >
         <li>
-          <a href="#hero" className="text-black p-2 cursor-pointer hover:text-xl">Home</a>
+          <a href="#hero" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="#about" className="text-black p-2 cursor-pointer hover:text-xl">About</a>
+          <a href="#about" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+            About
+          </a>
         </li>
         <li>
-          <a href="#projects" className="text-black p-2  cursor-pointer hover:text-xl">Projects</a>
+          <a href="#projects" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+            Projects
+          </a>
         </li>
         <li>
-          <a href="#skills" className="text-black p-2 cursor-pointer hover:text-xl">Skills</a>
+          <a href="#skills" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+            Skills
+          </a>
         </li>
         <li>
-          <a href="#contact" className="text-black p-2 cursor-pointer hover:text-xl">Contact</a>
+          <a href="#contact" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+            Contact
+          </a>
         </li>
-      </ul>
 
-      {/* Show Social Media Icons only in the burger menu on small screens */}
-      <div className={`flex-col md:flex md:space-x-5 absolute md:relative transition-all duration-300 ease-in-out ${isOpen ? 'top-20 left-0 w-full md:w-auto flex' : 'hidden md:flex'} md:top-0`}>
-        <div className="flex justify-end items-end space-y-2 md:hidden">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-black p-2 cursor-pointer">
-            <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 hover:text-gray-200" />
+        {/* Show Social Media Icons in the burger menu */}
+        <div className="flex space-x-5 mt-80 md:hidden">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-black p-2 cursor-pointer">
-            <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 hover:text-gray-200" />
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-black p-2 cursor-pointer">
-            <FontAwesomeIcon icon={faGithub} className="h-6 w-6 hover:text-gray-200" />
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <FontAwesomeIcon icon={faGithub} className="h-6 w-6" />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-black p-2 cursor-pointer">
-            <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 hover:text-gray-200" />
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6" />
           </a>
         </div>
-      </div>
+      </ul>
 
-      {/* Show Social Media Icons on larger screens only */}
+      {/* Social Icons for large screens */}
       <div className="hidden md:flex space-x-4">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 text-black hover:text-gray-200" />
