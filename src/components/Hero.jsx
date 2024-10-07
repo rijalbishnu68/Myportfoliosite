@@ -23,11 +23,11 @@ const Hero = () => {
   return (
     <section className="h bg-gradient-to-t from-black-400 to-slate-400 text-center p-6 flex flex-col justify-center">
       <div className="flex items-center justify-center">
-        <img className="w-32 md:w-40 rounded-full border border-gray-800 transition-transform hover:scale-105" src={portpic} alt="Bishnu Rijal" />
+        <img className="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-gray-800 transition-transform hover:scale-105" src={portpic} alt="Bishnu Rijal" />
       </div>
       <h1 className="text-center mx-5 pt-6 text-xl sm:text-2xl md:text-3xl">
         Transforming Ideas
-        <span className='text-purple-400'> Into Innovative Solutions </span> Using
+        <span className='text-purple-800'> Into Innovative Solutions </span> Using
         <span className='text-purple-600/90'> Modern Technologies.</span>
       </h1>
       

@@ -29,7 +29,7 @@ const Navbar = () => {
           src={bishnuLogo}
           alt="Bishnu Rijal"
         />
-      </a>
+      </a> 
 
       {/* Hamburger Menu Icon for Small Screens */}
       <div className="md:hidden z-50">
@@ -40,48 +40,48 @@ const Navbar = () => {
 
       {/* Navbar Links */}
       <ul
-        className={`fixed inset-0 bg-purple-500 bg-opacity-95 z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`space-y-5  fixed inset-0 bg-purple-500 bg-opacity-95 z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:static md:flex-row md:space-x-4 md:bg-transparent md:translate-x-0`}
+        } md:static md:flex-row  md:space-x-3 md:space-y-1 md:bg-transparent md:translate-x-0`}
       >
         <li>
-          <a href="#hero" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+          <a href="#hero" className="text-white p-4 text-xl md:text-black hover:text-purple-600 transition-colors duration-300" onClick={closeMenu}>
             Home
           </a>
         </li>
         <li>
-          <a href="#about" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+          <a href="#about" className="text-white p-4 text-xl md:text-black hover:text-purple-800 transition-colors duration-300" onClick={closeMenu}>
             About
           </a>
         </li>
         <li>
-          <a href="#projects" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+          <a href="#projects" className="text-white p-4 text-xl md:text-black hover:text-purple-800 transition-colors duration-300" onClick={closeMenu}>
             Projects
           </a>
         </li>
         <li>
-          <a href="#skills" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+          <a href="#skills" className="text-white p-4 text-xl md:text-black hover:text-purple-800 transition-colors duration-300" onClick={closeMenu}>
             Skills
           </a>
         </li>
         <li>
-          <a href="#contact" className="text-white p-4 text-2xl md:text-black md:hover:text-xl" onClick={closeMenu}>
+          <a href="#contact" className="text-white p-4 text-xl md:text-black hover:text-purple-800 transition-colors duration-300" onClick={closeMenu}>
             Contact
           </a>
         </li>
 
         {/* Show Social Media Icons in the burger menu */}
-        <div className="flex space-x-5 mt-80 md:hidden">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
+        <div className="flex space-x-10 pt-10 hover:text-gray-500: md:hidden">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-800">
             <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-800">
             <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-800">
             <FontAwesomeIcon icon={faGithub} className="h-6 w-6" />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-800">
             <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6" />
           </a>
         </div>
@@ -90,16 +90,16 @@ const Navbar = () => {
       {/* Social Icons for large screens */}
       <div className="hidden md:flex space-x-4">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 text-black hover:text-gray-200" />
+          <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 text-black hover:text-purple-600" />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-black hover:text-gray-200" />
+          <FontAwesomeIcon icon={faTwitter} className="h-6 w-6 text-black hover:text-purple-600" />
         </a>
         <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-black hover:text-gray-200" />
+          <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-black hover:text-purple-600" />
         </a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-black hover:text-gray-200" />
+          <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-black hover:text-purple-600" />
         </a>
       </div>
     </nav>
